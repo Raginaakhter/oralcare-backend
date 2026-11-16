@@ -27,6 +27,7 @@ export const errorHandler = (
   if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;
+    details = err.details;
   } else if (err instanceof mongoose.Error.ValidationError) {
     statusCode = 400;
     message = 'Validation failed';
